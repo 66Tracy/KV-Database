@@ -33,6 +33,7 @@ void KVDBHandler::reopen(){
         	
 	if(AOF.fail()){
         cout<<"error path of file"<<endl;
+        kvdb::setIndex(this);
 	}
 	else{
 		cout<<"open successfully"<<endl;
@@ -76,7 +77,9 @@ int kvdb::clearOverDue(KVDBHandler* handler){
 
 int kvdb::setIndex(KVDBHandler* handler){
 	unordered_map<string,node1>& Index = handler->getIndex();
+	priority_queue<node>& TimeQueue = handler->getTimeQueue();
 	Index.clear();
+	TimeQueue.clear();
 	
 	fstream& AOF=handler->getAOF();
 	
@@ -99,6 +102,7 @@ int kvdb::setIndex(KVDBHandler* handler){
 		else if(value_length==-1){
 			AOF.read(reinterpret_cast<char*>(&Time),sizeof(time_t));
 			Index[key]=node1(offset,Time);
+			TimeQueue.push(node(Time,key));
 		}
 		else{
 			Index[key]=node1(offset,0);
