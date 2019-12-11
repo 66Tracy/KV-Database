@@ -79,7 +79,6 @@ int kvdb::setIndex(KVDBHandler* handler){
 	unordered_map<string,node1>& Index = handler->getIndex();
 	priority_queue<node>& TimeQueue = handler->getTimeQueue();
 	Index.clear();
-	TimeQueue.clear();
 	
 	fstream& AOF=handler->getAOF();
 	
