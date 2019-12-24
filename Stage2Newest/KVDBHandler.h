@@ -57,23 +57,23 @@ namespace kvdb {
 		std::string 	path_file;
 		std::unordered_map<std::string,node1> Index;
 		std::priority_queue<node> TimeQueue;
-    public:
-        // Constructor, creates DB handler
-        // @param db_file {const std::string&} path of the append-only file for database.
-        KVDBHandler(const std::string& db_file);
+    	public:
+        	// Constructor, creates DB handler
+        	// @param db_file {const std::string&} path of the append-only file for database.
+        	KVDBHandler(const std::string& db_file);
         
-        std::fstream& getAOF();
+        	std::fstream& getAOF();
         
-        std::unordered_map<std::string,node1>& getIndex();
+        	std::unordered_map<std::string,node1>& getIndex();
         
-        std::priority_queue<node>& getTimeQueue();
+        	std::priority_queue<node>& getTimeQueue();
         
-        void reopen();
+        	void reopen();
 		
 		std::string getPath();
 
-        // Closes DB handler
-        ~KVDBHandler();
+        	// Closes DB handler
+        	~KVDBHandler();
     };
     
     //clear the overdue K-V
