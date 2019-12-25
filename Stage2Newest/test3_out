@@ -1,0 +1,39 @@
+Wait for 1 secs...
+1
+Wait for 2 secs...
+'a' Not exists for GET!
+Wait for 3 secs...
+'b' Not exists for DEL!
+Wait for 1 secs...
+Deletes 'b'
+Wait for 2 secs...
+'b' Not exists for GET!
+Wait for 3 secs...
+4
+1
+Deletes 'c'
+1
+Wait for 3 secs...
+'c' Not exists for GET!
+'d' Not exists for GET!
+'e' Not exists for GET!
+Deletes 'd'
+Deletes 'g'
+Deletes 'h'
+Deletes 'i'
+Wait for 2 secs...
+'c' Not exists for GET!
+'d' Not exists for GET!
+1
+1
+2
+'h' Not exists for GET!
+3
+Wait for 3 secs...
+'c' Not exists for GET!
+'d' Not exists for GET!
+'e' Not exists for GET!
+'f' Not exists for GET!
+'g' Not exists for GET!
+'h' Not exists for GET!
+3
